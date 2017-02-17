@@ -75,35 +75,35 @@ namespace UnitTestProjet1
 		}
 		TEST_METHOD(GetPolarAngleDegTest1)
 		{
-			Vector2D u = { 9, -5 };
-			Vector2D v = { -9, 5 };
-			Vector2D add = Add(&u, &v);
-			Vector2D r = { 0, 0 };
-			Assert::IsTrue(Equals(&add, &r));
+			Vector2D u = { -1, 0 };
+			float getpolarAngleDeg = GetPolarAngleDeg(&u);
+			float r = 180.0f;
+			Assert::IsTrue(abs(getpolarAngleDeg - r)< EPSILON);
 		}
 		TEST_METHOD(GetPolarAngleDegTest2)
 		{
-			Vector2D u = { 9, -5 };
-			Vector2D v = { -9, 5 };
-			Vector2D add = Add(&u, &v);
-			Vector2D r = { 0, 0 };
-			Assert::IsTrue(Equals(&add, &r));
+			Vector2D u = { 1, 0 };
+			float getpolarAngleDeg = GetPolarAngleDeg(&u);
+			float r = 0.0f;
+			Assert::IsTrue(abs(getpolarAngleDeg - r)< EPSILON);
 		}
 		TEST_METHOD(AngleBetweenDegTest1)
 		{
-			Vector2D u = { 9, -5 };
-			Vector2D v = { -9, 5 };
-			Vector2D add = Add(&u, &v);
-			Vector2D r = { 0, 0 };
-			Assert::IsTrue(Equals(&add, &r));
+			Vector2D u = { -1, 0 };
+			Vector2D v = { -1, 0 };
+			float angleBetweenDeg;
+			angleBetweenDeg = AngleBetweenDeg(&u, &v);
+			float r = 0.0f;
+			Assert::IsTrue(abs(angleBetweenDeg- r)< EPSILON);
 		}
 		TEST_METHOD(AngleBetweenDegTest2)
 		{
-			Vector2D u = { 9, -5 };
-			Vector2D v = { -9, 5 };
-			Vector2D add = Add(&u, &v);
-			Vector2D r = { 0, 0 };
-			Assert::IsTrue(Equals(&add, &r));
+			Vector2D u = { 1, 0 };
+			Vector2D v = { 0, -1 };
+			float angleBetweenDeg;
+			angleBetweenDeg = AngleBetweenDeg(&u, &v);
+			float r = 90.0f;
+			Assert::IsTrue(abs(angleBetweenDeg - r)< EPSILON);
 		}
 		TEST_METHOD(LengthTest1)
 		{
@@ -139,27 +139,25 @@ namespace UnitTestProjet1
 		}
 		TEST_METHOD(NormalizeTest1)
 		{
-			Vector2D u = { 9, -5 };
-			Vector2D v = { -9, 5 };
-			Vector2D add = Add(&u, &v);
-			Vector2D r = { 0, 0 };
-			Assert::IsTrue(Equals(&add, &r));
+			Vector2D u = { 10, 10 };
+			Assert::IsTrue(Normalize(&u));
+			Vector2D v = { (10 / (sqrt(200.0f))), (10 / (sqrt(200.0f))) };
+			Assert::IsTrue(Equals(&u, &v));
 		}
 		TEST_METHOD(NormalizeTest2)
 		{
-			Vector2D u = { 9, -5 };
-			Vector2D v = { -9, 5 };
-			Vector2D add = Add(&u, &v);
-			Vector2D r = { 0, 0 };
-			Assert::IsTrue(Equals(&add, &r));
+			Vector2D u = { 10, 10 };
+			Assert::IsTrue(Normalize(&u));
+			Vector2D v = { (10 / (sqrt(200.0f))), (10 / (sqrt(200.0f))) };
+			Assert::IsTrue(Equals(&u, &v));
 		}
 		TEST_METHOD(ScaleByTest1)
 		{
 			Vector2D u = { 9, -5 };
-			float f;
-			Vector2D add = Add(&u, &v);
-			Vector2D r = { 0, 0 };
-			Assert::IsTrue(Equals(&add, &r));
+			float f =  2.0f;
+			ScaleBy(&u, f);
+			Vector2D r = { 18, -10 };
+			Assert::IsTrue(Equals(&u, &r));
 		}
 		TEST_METHOD(ScaleByTest2)
 		{
