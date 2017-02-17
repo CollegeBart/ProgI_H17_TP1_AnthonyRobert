@@ -107,35 +107,35 @@ namespace UnitTestProjet1
 		}
 		TEST_METHOD(LengthTest1)
 		{
-			Vector2D u = { 9, -5 };
-			Vector2D v = { -9, 5 };
-			Vector2D add = Add(&u, &v);
-			Vector2D r = { 0, 0 };
-			Assert::IsTrue(Equals(&add, &r));
+			Vector2D v = { 3, 4 };
+			float length = Length(&v);
+			float result = 5.0f;
+			Assert::IsTrue(abs(length - result) < EPSILON);
 		}
 		TEST_METHOD(LengthTest2)
 		{
-			Vector2D u = { 9, -5 };
-			Vector2D v = { -9, 5 };
-			Vector2D add = Add(&u, &v);
-			Vector2D r = { 0, 0 };
-			Assert::IsTrue(Equals(&add, &r));
+			Vector2D v = { -3, 4 };
+			float length = Length(&v);
+			float result = 5.0f;
+			Assert::IsTrue(abs(length - result) < EPSILON);
 		}
 		TEST_METHOD(LengthSqTest1)
 		{
-			Vector2D u = { 9, -5 };
-			float vLength;
-			vLength = LengthSq(&u);
-			float r = { 30 };
-			Assert::IsTrue(abs(vLength - r));
+			Vector2D v = { 3, 4 };
+			float l;
+			l = LengthSq(&v);
+			float r;
+			r = 25.0f;
+			Assert::IsTrue(abs(l - r) < EPSILON);
 		}
 		TEST_METHOD(LengthSqTest2)
 		{
-			Vector2D u = { 10, 11 };
-			float vLength;
-			vLength = LengthSq(&u);
-			float r = { 15 };
-			Assert::IsTrue(abs(vLength - r));
+			Vector2D v = { -3, -4 };
+			float l;
+			l = LengthSq(&v);
+			float r;
+			r = 25.0f;
+			Assert::IsTrue(abs(l - r) < EPSILON);
 		}
 		TEST_METHOD(NormalizeTest1)
 		{
@@ -156,7 +156,7 @@ namespace UnitTestProjet1
 		TEST_METHOD(ScaleByTest1)
 		{
 			Vector2D u = { 9, -5 };
-			Vector2D v = { -9, 5 };
+			float f;
 			Vector2D add = Add(&u, &v);
 			Vector2D r = { 0, 0 };
 			Assert::IsTrue(Equals(&add, &r));

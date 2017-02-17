@@ -57,8 +57,9 @@ bool Normalize(Vector2D vect)
 	return false;
 }
 
-void ScaleBy(Vector2D vect, float scale)
+void ScaleBy(const Vector2D* vect, float scale)
 {
+	vect = &Scale(vect, scale);
 }
 
 Vector2D GetVectorByAngleDeg(float angle)
