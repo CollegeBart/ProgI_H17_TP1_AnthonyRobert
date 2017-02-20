@@ -1,4 +1,5 @@
 #include "Vector2D.h"
+#include "Constante.h"
 
 Vector2D Add(const Vector2D* const left,const Vector2D* const right)
 {
@@ -31,19 +32,19 @@ void MoveBy(const Vector2D* const by,Vector2D* const toMove)
 
 float GetPolarAngleDeg(const Vector2D* vect)
 {
-	return atan2(vect->y, vect->x) * 180 / PI;
+	return atan2f(vect->y, vect->x) * 180 / PI;
 }
 
 float AngleBetweenDeg(const Vector2D* left, const Vector2D* right)
 {
-	return acos(left->x * right->x + left->y * right ->y) / (Length(left) * Length(right)) * 180 / PI                                                                                                                       ;
+	return acosf(left->x * right->x + left->y * right ->y) / (Length(left) * Length(right)) * 180 / PI                                                                                                                       ;
 }
 
 float Length(const Vector2D* vect)
 {
 	//math.sqrt(x*x + y*y)/2
-	float longueur;
-	return longueur = sqrt(LengthSq(vect));
+
+	return sqrtf(LengthSq(vect));
 }
 
 float LengthSq(const Vector2D* vect)
@@ -74,8 +75,8 @@ Vector2D GetVectorByAngleDeg(float angle)
 {
 	Vector2D v;
 
-	v.x = cos(angle);
-	v.y = sin(angle);
+	v.x = cosf(angle);
+	v.y = sinf(angle);
 
 	return v;
 }

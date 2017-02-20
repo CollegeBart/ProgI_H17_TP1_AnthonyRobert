@@ -2,6 +2,8 @@
 #include "CppUnitTest.h"
 
 #include "Vector2D.h"
+#include "Vector3D.h"
+#include "Constante.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -188,6 +190,105 @@ namespace UnitTestProjet1
 			Vector2D u = { 1.0f, 0 };
 			Vector2D v = { 0.999999f, 0 };
 			Assert::IsTrue(Equals(&u, &v));
+		}
+	};
+	TEST_CLASS(Vector3DTest)
+	{
+		TEST_METHOD(ADDTest3D)
+		{
+
+		}
+		TEST_METHOD(ADDTest3D1)
+		{
+
+		}
+		TEST_METHOD(SubstractTest1)
+		{
+
+		}
+		TEST_METHOD(SubstractTest2)
+		{
+
+		}
+		TEST_METHOD(ScaleTest1)
+		{
+
+		}
+		TEST_METHOD(ScaleTest2)
+		{
+
+		}
+		TEST_METHOD(DotTest1)
+		{
+
+		}
+		TEST_METHOD(DotTest2)
+		{
+
+		}
+		TEST_METHOD(DotTest3)
+		{
+
+		}
+		TEST_METHOD(CrossLHTest1)
+		{
+
+		}
+		TEST_METHOD(CrossLHTest2)
+		{
+
+		}
+		TEST_METHOD(CrossRHTest1)
+		{
+
+		}
+		TEST_METHOD(CrossRHTest2)
+		{
+
+		}
+		TEST_METHOD(MoveByTest1)
+		{
+
+		}
+		TEST_METHOD(MoveByTest2)
+		{
+
+		}
+		TEST_METHOD(Length3D1Test)
+		{
+
+		}
+		TEST_METHOD(Length3D2Test)
+		{
+
+		}
+		TEST_METHOD(LengthSq3DTest1)
+		{
+
+		}
+		TEST_METHOD(LengthSq3DTest2)
+		{
+
+		}
+		TEST_METHOD(Normalize3dTest1)
+		{
+
+		}
+		TEST_METHOD(Normalize3dTest2)
+		{
+
+		}
+		TEST_METHOD(ScaleByTest1)
+		{
+
+		}
+		TEST_METHOD(ScaleByTest2)
+		{
+
+		}
+		TEST_METHOD(EqualsTest1)
+		{
+
 		}
 	};
 

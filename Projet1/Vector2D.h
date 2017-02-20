@@ -4,8 +4,8 @@ struct Vector2D {
 	float x, y;
 };
 
-const float PI = 3.1415926535897f;
-const float EPSILON = 0.0001f;
+
+
 
 // Vector 2D
 Vector2D Add(const Vector2D* const left,const Vector2D* const right);
