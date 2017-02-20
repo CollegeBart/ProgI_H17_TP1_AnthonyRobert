@@ -17,6 +17,6 @@ float AngleBetweenDeg(const Vector2D* left, const Vector2D* right);
 float Length(const Vector2D* vect);
 float LengthSq(const Vector2D* vect);
 bool Normalize(Vector2D* const vect);
-void ScaleBy(const Vector2D* vect, float scale);
+void ScaleBy(Vector2D* vect, float const scale);
 Vector2D GetVectorByAngleDeg(float angle);
 bool Equals(const Vector2D* const left, const Vector2D* const right);
