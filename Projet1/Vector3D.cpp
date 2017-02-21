@@ -30,17 +30,22 @@ Vector3D Scale(const Vector3D * vect, float scale)
 
 float Dot(const Vector3D * left, const Vector3D * right)
 {
-	return 0.0f;
+	return (left->x * right->x) + (left->y* right->y) + (left->z * right->z);
 }
 
 Vector3D CrossLH(const Vector3D * const left, const Vector3D * const right)
 {
-	return Vector3D();
+
+	return CrossRH(right, left);
 }
 
-Vector3D CrossRH(const Vector3D * const left, const Vector3D * const right)
+Vector3D CrossRH(const Vector3D* const left,const Vector3D* const right)
 {
-	return Vector3D();
+	Vector3D v;
+	v.x = (left->y * right->z) - (right->y * left->z);
+	v.y = -((left->x * right->z) - (right->x * left->z));
+	v.z = (left->x * right->y) - (right->x * left->y);
+	return v;
 }
 
 void MoveBy(const Vector3D * const by,Vector3D * const tomove)

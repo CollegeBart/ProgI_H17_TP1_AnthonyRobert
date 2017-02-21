@@ -21,4 +21,5 @@ float Length(const Vector3D* vect);
 float LengthSq(const Vector3D* vect);
 bool Normalize(Vector3D* const vect);
 void ScaleBy(Vector3D* vect, float const scale);
-bool Equals(const Vector3D left, Vector3D right);
+bool Equals(const Vector3D left, Vector3D right);
+
