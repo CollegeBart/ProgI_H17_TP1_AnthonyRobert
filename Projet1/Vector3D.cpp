@@ -28,7 +28,7 @@ Vector3D Scale(const Vector3D * vect, float scale)
 	return v;
 }
 
-float Dot(const Vector3D * left, const Vector3D * right)
+float Dot(Vector3D* left, Vector3D* right)
 {
 	return (left->x * right->x) + (left->y* right->y) + (left->z * right->z);
 }

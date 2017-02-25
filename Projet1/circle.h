@@ -1,25 +1,20 @@
 #pragma once
-class circle
-{
-public:
-	circle();
-	~circle();
-};
-
 #include "Vector2D.h"
 class Circle {
 public:
 	Circle(float x, float y, float radius);
-	Circle(Vector2D center, float radius);
-	bool Contains(float x, float y);
-	bool Contains(Vector2D point);
-	float GetX();
-	float GetY();
+	Circle(const Vector2D* const center, const float radius);
+	bool Contains(const float x, const float y) const;
+	bool Contains(const Vector2D* const point) const;
+	float GetX() { return x; }
+	float GetY() { return y; }
 	float GetRadiusSq();
-	float GetRadius();
-	void SetPosition(Vector2D vect);
+	float GetRadius() { return radius; }
+	void SetPosition(const Vector2D* vect);
 	void SetPosition(float x, float y);
-	void MoveBy(Vector2D vect);
-	void MoveBy(float x, float y);
-	bool CollidesWith(Circle circ);
+	void MoveBy(const Vector2D* const vect);
+	void MoveBy(const float x, const float y);
+	bool CollidesWith(const Circle* const circ) const;
+private :
+	float x, y, radius;
 };

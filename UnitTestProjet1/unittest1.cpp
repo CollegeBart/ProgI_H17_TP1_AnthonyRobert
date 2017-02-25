@@ -31,7 +31,8 @@ namespace UnitTestProjet1
 		TEST_METHOD(SubstractTest1)
 		{
 			Vector2D u = { 100, -99 };
-			Vector2D sub = Substract(&u, &u);
+			Vector2D v = { 100, -99 };
+			Vector2D sub = Substract(&u, &v);
 			Vector2D r = { 0, 0 };
 			Assert::IsTrue(Equals(&sub, &r));
 		}
@@ -196,79 +197,155 @@ namespace UnitTestProjet1
 	{
 		TEST_METHOD(ADDTest3D)
 		{
-
+			Vector3D u = { 9, -5, 10 };
+			Vector3D v = { -9, 5, -10 };
+			Vector3D add = Add(&u, &v);
+			Vector3D r = { 0, 0, 0 };
+			Assert::IsTrue(Equals(&add, &r));
 		}
 		TEST_METHOD(ADDTest3D1)
 		{
-
+			Vector3D u = { 9, -5 , 0};
+			Vector3D v = { 3, 8 , 12};
+			Vector3D add = Add(&u, &v);
+			Vector3D r = { 12, 3, 12};
+			Assert::IsTrue(Equals(&add, &r));
 		}
 		TEST_METHOD(SubstractTest1)
 		{
-
+			Vector3D u = { 100, -99, 0 };
+			Vector3D v = { 100, -99,  0};
+			Vector3D sub = Substract(&u, &v);
+			Vector3D r = { 0, 0, 0 };
+			Assert::IsTrue(Equals(&sub, &r));
 		}
 		TEST_METHOD(SubstractTest2)
 		{
-
+			Vector3D u = { 20, 15, 25 };
+			Vector3D v = { -80, 30.5, 20.5 };
+			Vector3D sub = Substract(&u, &v);
+			Vector3D r = { 100, -15.5, 4.5 };
+			Assert::IsTrue(Equals(&sub, &r));
 		}
 		TEST_METHOD(ScaleTest1)
 		{
-
+			float scale = { 2.0f };
+			Vector3D u = { 5, 10, 15 };
+			Vector3D scl = Scale(&u, scale);
+			Vector3D r = { 10, 20, 30 };
+			Assert::IsTrue(Equals(&scl, &r));
 		}
 		TEST_METHOD(ScaleTest2)
 		{
-
+			float scale = { 2.5f };
+			Vector3D u = { 5, 10, 15  };
+			Vector3D scl = Scale(&u, scale);
+			Vector3D r = { 12.5f, 25, 37.5f  };
+			Assert::IsTrue(Equals(&scl, &r));
 		}
 		TEST_METHOD(DotTest1)
 		{
-
+			Vector3D u = { 2.0f , 3.0f ,4.0f };
+			Vector3D v = { 4.0f, 5.0f ,6.0f };
+			float doot = Dot(&u, &v);
+			float r = 47.0f;
+			Assert::IsTrue(abs(doot - r) < EPSILON);
 		}
 		TEST_METHOD(DotTest2)
 		{
-
+			Vector3D u = { -4.0f , -6.0f ,-5.0f };
+			Vector3D v = { 4.0f, 5.0f ,6.0f };
+			float doot = Dot(&u, &v);
+			float r = -76.f;
+			Assert::IsTrue(abs(doot - r) < EPSILON);
 		}
 		TEST_METHOD(DotTest3)
 		{
-
+			Vector3D u = { 0.f , 0.0f ,0.0f };
+			Vector3D v = { 0.0f, 0.0f ,0.0f };
+			float doot = Dot(&u, &v);
+			float r = 0.0f;
+			Assert::IsTrue(abs(doot - r) < EPSILON);
 		}
 		TEST_METHOD(CrossLHTest1)
 		{
-
+			Vector3D u = { 2,3,4 };
+			Vector3D v = { 4,5,6 };
+			Vector3D cr = CrossRH(&u, &v);
+			Vector3D r = { -2, 4, -2 };
+			Assert::IsTrue(Equals(&cr, &r));
 		}
 		TEST_METHOD(CrossLHTest2)
 		{
-
+			Vector3D u = { -4, 8, -6 };
+			Vector3D v = { -2, 5, -2 };
+			Vector3D cl = CrossLH(&u, &v);
+			Vector3D r = { -14 , -4, -4 };
+			Assert::IsTrue(Equals(&cl, &r));
 		}
 		TEST_METHOD(CrossRHTest1)
 		{
-
+			Vector3D u = { 2,3,4 };
+			Vector3D v = { 4,5,6 };
+			Vector3D cr = CrossRH(&u, &v);
+			Vector3D r = { -2, 4, -2 };
+			Assert::IsTrue(Equals(&cr, &r));
 		}
 		TEST_METHOD(CrossRHTest2)
 		{
-
+			Vector3D u = { -4, 8, -6 };
+			Vector3D v = { -2, 5, -2 };
+			Vector3D cr = CrossRH(&u, &v);
+			Vector3D r = { 14 , 4 , 4 };
+			Assert::IsTrue(Equals(&cr, &r));
 		}
 		TEST_METHOD(MoveByTest1)
 		{
-
+			Vector3D _by = { 0, 0, 0};
+			Vector3D _toMove = { 20,20, 20 };
+			MoveBy(&_by, &_toMove);
+			Vector3D r = { 20, 20 , 20 };
+			Assert::IsTrue(Equals(&_toMove, &r));
 		}
 		TEST_METHOD(MoveByTest2)
 		{
-
+			Vector3D _by = { 0, 0 };
+			Vector3D _toMove = { 20,20 };
+			MoveBy(&_by, &_toMove);
+			Vector3D r = { 20, 20 };
+			Assert::IsTrue(Equals(&_toMove, &r));
 		}
 		TEST_METHOD(Length3D1Test)
 		{
-
+			Vector3D v = { 3, 4, 5 };
+			float length = Length(&v);
+			float result = 7.071067f;
+			Assert::IsTrue(abs(length - result) < EPSILON);
 		}
 		TEST_METHOD(Length3D2Test)
 		{
-
+			Vector3D v = { 4, 5, 6 };
+			float length = Length(&v);
+			float result = 8.774964f;
+			Assert::IsTrue(abs(length - result) < EPSILON);
 		}
 		TEST_METHOD(LengthSq3DTest1)
 		{
-
+			Vector3D v = { 3, 4 , 5 };
+			float l;
+			l = LengthSq(&v);
+			float r;
+			r = 50.0f;
+			Assert::IsTrue(abs(l - r) < EPSILON);
 		}
 		TEST_METHOD(LengthSq3DTest2)
 		{
-
+			Vector3D v = {4, 5, 6 };
+			float l;
+			l = LengthSq(&v);
+			float r;
+			r = 77.0f;
+			Assert::IsTrue(abs(l - r) < EPSILON);
 		}
 		TEST_METHOD(Normalize3dTest1)
 		{
@@ -280,15 +357,25 @@ namespace UnitTestProjet1
 		}
 		TEST_METHOD(ScaleByTest1)
 		{
-
+			Vector3D u = { 9, -5, 10 };
+			float f = 2.0f;
+			ScaleBy(&u, f);
+			Vector3D r = { 18, -10, 10 };
+			Assert::IsTrue(Equals(&u, &r));
 		}
 		TEST_METHOD(ScaleByTest2)
 		{
-
+			Vector3D u = { -9, -5, -6 };
+			float f = 2.0f;
+			ScaleBy(&u, f);
+			Vector3D r = { -18, -10, -12  };
+			Assert::IsTrue(Equals(&u, &r));
 		}
 		TEST_METHOD(EqualsTest1)
 		{
-
+			Vector3D u = { 1.0f, 0, 0 };
+			Vector3D v = { 0.999999f, 0, 0 };
+			Assert::IsTrue(Equals(&u, &v));
 		}
 	};
 
